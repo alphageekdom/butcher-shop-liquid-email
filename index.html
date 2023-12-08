@@ -341,6 +341,7 @@
                                 <ul>
                                     {% assign items = order.items_ids | split: ", " %}
                                     {% assign items_titles = order.items_titles | split: ", " %}
+                                    {% assign items_page = order.items_page %}
                                     {% assign items_styles = order.items_styles | split: ", " %}
                                     {% assign items_images = order.items_images | split: ", " %}
                                     {% assign items_prices = order.items_prices | split: ", " %}
@@ -381,7 +382,7 @@
                                                                                 style="font-family: Montserrat, Arial, Helvetica, sans-serif; font-size: 15px; padding-bottom: 12px;">
                                                                                 {{ items_prices[forloop.index0] }}</p>
                                                                             <a class="button"
-                                                                                href="https://www.example.com"
+                                                                                href="{{ items_page }}"
                                                                                 target="_blank"
                                                                                 style="font-family: Montserrat, Arial, Helvetica, sans-serif; padding: 10px 20px;
                                                                         font-size: 17px;
@@ -632,7 +633,7 @@
                         items_ids: "34532, 6543, 8796, 4556",
                         items_titles: "Tomahawk Ribeye, Read Meats, Chicken Cuts, Bacon",
                         items_styles: "Premium, Regular, Organic, Thick",
-                        items_page: "",
+                        items_page: "https://ribeye-dons-shop.netlify.app/pages/products",
                         items_images: "./img/tomahawk.webp, ./img/ribeye.webp, ./img/chicken.webp, ./img/bacon.webp",
                         items_bbq: "./img/brisket.jpeg",
                         items_prices: '$49.99, 20% OFF, $9.99, $12.99',
