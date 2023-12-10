@@ -17,8 +17,6 @@
 		</style>
 	<![endif]-->
         <style type="text/css">
-            @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
             /* CLIENT SPECIFIC STYLES */
             body,
             table,
@@ -135,7 +133,7 @@
 
 
     <body id="body"
-        style="Margin: 0 !important; padding: 0 !important; background-color: #FAF9F6; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.2; color: #000000;">
+        style="Margin: 0 !important; padding: 0 !important; background-color: #FAF9F6; font-family: Montserrat, Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.2; color: #000000;">
         <script type="text/template">
         <div style="display: none; max-height: 0; overflow: hidden;">
             See this week's specials at your local Ribeye Don's...
@@ -341,7 +339,7 @@
                                 <ul>
                                     {% assign items = order.items_ids | split: ", " %}
                                     {% assign items_titles = order.items_titles | split: ", " %}
-                                    {% assign items_page = order.items_page %}
+                                    {% assign items_page = order.items_page | split: ", " %}
                                     {% assign items_styles = order.items_styles | split: ", " %}
                                     {% assign items_images = order.items_images | split: ", " %}
                                     {% assign items_prices = order.items_prices | split: ", " %}
@@ -382,7 +380,7 @@
                                                                                 style="font-family: Montserrat, Arial, Helvetica, sans-serif; font-size: 15px; padding-bottom: 12px;">
                                                                                 {{ items_prices[forloop.index0] }}</p>
                                                                             <a class="button"
-                                                                                href="{{ items_page }}"
+                                                                                href="{{ items_page[forloop.index0] }}"
                                                                                 target="_blank"
                                                                                 style="font-family: Montserrat, Arial, Helvetica, sans-serif; padding: 10px 20px;
                                                                         font-size: 17px;
@@ -633,7 +631,7 @@
                         items_ids: "34532, 6543, 8796, 4556",
                         items_titles: "Tomahawk Ribeye, Read Meats, Chicken Cuts, Bacon",
                         items_styles: "Premium, Regular, Organic, Thick",
-                        items_page: "https://ribeye-dons-shop.netlify.app/pages/products",
+                        items_page: "https://ribeye-dons-shop.netlify.app/pages/products#beef, https://ribeye-dons-shop.netlify.app/pages/products#beef, https://ribeye-dons-shop.netlify.app/pages/products#chicken, https://ribeye-dons-shop.netlify.app/pages/products#pork",
                         items_images: "./img/tomahawk.webp, ./img/ribeye.webp, ./img/chicken.webp, ./img/bacon.webp",
                         items_bbq: "./img/brisket.jpeg",
                         items_prices: '$49.99, 20% OFF, $9.99, $12.99',
