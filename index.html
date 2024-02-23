@@ -242,7 +242,7 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <a class="button" href="{{ company.home_page }}" target="_blank"
-                                                                                    style="padding: 10px 20px; font-size: 17px; font-weight: bold; background-color: #E60000; border-radius: 5px; text-decoration: none; color: #FAF9F6;; font-family: Montserrat, Arial, Helvetica, sans-serif;">
+                                                                                    style="padding: 10px 20px; font-size: 17px; font-weight: bold; background-color: #A00200; border-radius: 5px; text-decoration: none; color: #FAF9F6;; font-family: Montserrat, Arial, Helvetica, sans-serif;">
                                                                                     Visit Us
                                                                                 </a>
                                                                             </td>
@@ -259,29 +259,91 @@
                                 </tr>
                                 <!-- END HERO CONTENT -->
                                 <!-- START WEEKLY DEALS -->
-                                <tr
-                                style="background: radial-gradient(circle, rgba(187,1,0,1) 0%, rgba(0,0,0,1) 100%);">
-                                <td>
-                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
-                                        border="0" align="center"
-                                        style="color: #FAF9F6;;">
-                                        <tbody>
-                                            <tr>
-                                                <td border="0" cellspacing="0" cellpadding="0"
-                                                    role="presentation" align="center">
-                                                    <h1
-                                                        style="font-family: Montserrat, Arial, Helvetica, sans-serif;">
-                                                        This Week's Deals</h1>
-                                                    <p
-                                                        style="font-family: Montserrat, Arial, Helvetica, sans-serif; font-size: .7rem;">
-                                                        *Prices Valid from 11/23 - 12/05*</p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
+                                <tr style="background: radial-gradient(circle, rgba(187,1,0,1) 0%, rgba(0,0,0,1) 100%);">
+                                    <td>
+                                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                                            border="0" align="center"
+                                            style="color: #FAF9F6;;">
+                                            <tbody>
+                                                <tr>
+                                                    <td border="0" cellspacing="0" cellpadding="0"
+                                                        role="presentation" align="center">
+                                                        <h1
+                                                            style="font-family: Montserrat, Arial, Helvetica, sans-serif;">
+                                                            This Week's Deals</h1>
+                                                        <p
+                                                            style="font-family: Montserrat, Arial, Helvetica, sans-serif; font-size: .7rem;">
+                                                            *Prices Valid from 11/23 - 12/05*</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
                                 </tr>
                                 <!-- END WEEKLY DEALS -->
+                                <!-- START SALE ITEMS -->
+                                <ul>
+                                    {% assign items = order.items_ids | split: ", " %}
+                                    {% assign items_titles = order.items_titles | split: ", " %}
+                                    {% assign items_page = order.items_page | split: ", " %}
+                                    {% assign items_styles = order.items_styles | split: ", " %}
+                                    {% assign items_images = order.items_images | split: ", " %}
+                                    {% assign items_prices = order.items_prices | split: ", " %}
+
+                                    {%- for item in items -%}
+                                    <tr style="background-color: #1B1B1B; color: #FFF;">
+                                        <td style="padding: 30px 0;">
+                                            <table class="responsive-table" role="presentation" width="600" cellspacing="0" cellpadding="0" border="0"
+                                                align="center">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="dw db sale_items" style="padding: 18px 0;">
+                                                            <table role="presentation" width="300" cellspacing="0" cellpadding="0" border="0"
+                                                                align="center">
+                                                                <tb>
+                                                                    <tr>
+                                                                        <td class="dw db" align="right" style="padding-right: 20px">
+                                                                            <img class="image sale_image" src="{{ items_images[forloop.index0] }}" alt
+                                                                                width="250" height="200"
+                                                                                style="border-radius: 8%; object-fit: cover; object-position: center; border: 4px solid #A00200; width: 250px; height: 200px;" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </tb>
+                                                            </table>
+                                                        </td>
+                                                        <td class="dw db">
+                                                            <table role="presentation" width="300" cellspacing="0" cellpadding="0" border="0"
+                                                                align="center">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="dw db" style="padding-bottom: 2rem; padding-left: 20px" align="left"
+                                                                            id="item-info">
+                                                                            <p
+                                                                                style="font-family: Montserrat, Arial, Helvetica, sans-serif;font-size: 17px; font-weight: bold;">
+                                                                                {{ items_titles[forloop.index0] }}
+                                                                            </p>
+                                                                            <p
+                                                                                style="font-family: Montserrat, Arial, Helvetica, sans-serif; font-size: 15px; padding-bottom: 12px;">
+                                                                                {{ items_prices[forloop.index0] }}
+                                                                            </p>
+                                                                            <a class="button" href="{{ items_page[forloop.index0] }}" target="_blank"
+                                                                                style="font-family: Montserrat, Arial, Helvetica, sans-serif; padding: 10px 20px; font-size: 17px; font-weight: bold; background-color: #A00200; border-radius: 5px; text-decoration: none; color: #FAF9F6;; font-family: Montserrat, Arial, Helvetica, sans-serif;">
+                                                                                Order
+                                                                                Now
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </ul>
+                                <!-- END SALE ITEMS -->
                             </tbody>
                         </table>
                         <!-- END EMAIL (600PX WIDE) -->
@@ -326,7 +388,7 @@
                         items_ids: "34532, 6543, 8796, 4556",
                         items_titles: "Tomahawk Ribeye, Read Meats, Chicken Cuts, Bacon",
                         items_styles: "Premium, Regular, Organic, Thick",
-                        items_page: "https://ribeye-dons-shop.netlify.app/pages/products#beef, https://ribeye-dons-shop.netlify.app/pages/products#beef, https://ribeye-dons-shop.netlify.app/pages/products#chicken, https://ribeye-dons-shop.netlify.app/pages/products#pork",
+                        items_page: "http://www.example.com, http://www.example.com, http://www.example.com, http://www.example.com",
                         items_images: "./img/tomahawk.webp, ./img/ribeye.webp, ./img/chicken.webp, ./img/bacon.webp",
                         items_bbq: "./img/brisket.jpeg",
                         items_prices: '$49.99, 20% OFF, $9.99, $12.99',
