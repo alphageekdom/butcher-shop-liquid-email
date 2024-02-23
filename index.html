@@ -303,7 +303,7 @@
                                                                 <tb>
                                                                     <tr>
                                                                         <td class="dw db" align="right" style="padding-right: 20px">
-                                                                            <img class="image sale_image" src="{{ items_images[forloop.index0] }}" alt
+                                                                            <img class="image sale_image" src="{{ items_images[forloop.index0] }}" alt="{{ items_titles[forloop.index0]  }}"
                                                                                 width="250" height="200"
                                                                                 style="border-radius: 8%; object-fit: cover; object-position: center; border: 4px solid #A00200; width: 250px; height: 200px;" />
                                                                         </td>
@@ -363,6 +363,56 @@
                                     </td>
                                 </tr>
                                 <!-- END OF THANK YOU -->
+                                <!-- START BBQ INFO -->
+                                <tr style="background-color: #1B1B1B; color: #FFF;">
+                                    <td style="padding: 30px 0;">
+                                        <table class="responsive-table" role="presentation" width="600" cellspacing="0" cellpadding="0" border="0"
+                                            align="center">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="dw db">
+                                                        <table role="presentation" width="300" cellspacing="0" cellpadding="0" border="0"
+                                                            align="center">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="dw db" style="padding-bottom: 2rem; padding-left: 20px" align="left"
+                                                                        id="item-info">
+                                                                        <p style="font-family: Montserrat, Arial, Helvetica, sans-serif;font-size: 17px; font-weight: bold;">
+                                                                            BBQ Sunday (8AM - 2PM)
+                                                                        </p>
+                                                                        <p style="font-family: Montserrat, Arial, Helvetica, sans-serif; font-size: 15px; padding-bottom: 12px;">
+                                                                            Each Sunday we provide smoked and
+                                                                            grilled meats. It ranges from
+                                                                            briskets,
+                                                                            tacos, kebabs, etc.
+                                                                        </p>
+                                                                        <a class="button" href="https://www.example.com" target="_blank"
+                                                                            style="font-family: Montserrat, Arial, Helvetica, sans-serif; padding: 10px 20px; font-size: 17px; font-weight: bold;background-color: #A00200; border-radius: 5px; text-decoration: none; color: #FAF9F6;; font-family: Montserrat, Arial, Helvetica, sans-serif;">
+                                                                            Order Now
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td class="dw db sale_items" style="padding: 18px 0;">
+                                                        <table role="presentation" width="300" cellspacing="0" cellpadding="0" border="0"
+                                                            align="center">
+                                                            <tb>
+                                                                <tr>
+                                                                    <td class="dw db" align="center" style="padding-right: 20px">
+                                                                        <img class="image sale_image" src="{{ order.items_bbq }}" alt="{{ order.items_bbq_title }}" width="250" height="200" style="border-radius: 8%; object-fit: cover; object-position: center; border: 4px solid #A00200;; width: 250px; height: 200px;" />
+                                                                    </td>
+                                                                </tr>
+                                                            </tb>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- END BBQ INFO -->
                             </tbody>
                         </table>
                         <!-- END EMAIL (600PX WIDE) -->
@@ -408,8 +458,9 @@
                         items_titles: "Tomahawk Ribeye, Read Meats, Chicken Cuts, Bacon",
                         items_styles: "Premium, Regular, Organic, Thick",
                         items_page: "http://www.example.com, http://www.example.com, http://www.example.com, http://www.example.com",
-                        items_images: "./img/tomahawk.webp, ./img/ribeye.webp, ./img/chicken.webp, ./img/bacon.webp",
+                        items_images: "./img/tomahawk1.jpg, ./img/ribeye.webp, ./img/chicken.webp, ./img/bacon.webp",
                         items_bbq: "./img/brisket.jpeg",
+                        items_bbq_title: 'Brisket',
                         items_prices: '$49.99, 20% OFF, $9.99, $12.99',
                     }
                 })
