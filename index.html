@@ -77,7 +77,7 @@
 
             @media only screen and (max-width: 600px) {
                 .responsive-table {
-                    width: 100% !important;
+                    width: 480px !important;
                 }
 
                 .image {
@@ -112,6 +112,24 @@
 
                 #item-info {
                     padding-left: 0 !important;
+                }
+            }
+
+            @media only screen and (max-width: 480px) {
+                h2 {
+                    font-size: 1.5rem !important;
+                }
+
+                .responsive-table {
+                    width: 100% !important;
+                }
+
+                button {
+                    width: 300px !important;
+                }
+
+                .border-tbl {
+                    width: 100% !important;
                 }
             }
         </style>
@@ -193,7 +211,7 @@
                                                     <td>
                                                         <a href="#">
                                                             <img src="img/shop.jpg" alt="Butcher Shop Store" title="Butcher Shop Store" width="600" height="400"
-                                                            style="display: block; object-fit: cover; object-position: center; width: 600px; height: 400px;" loading="lazy"  />
+                                                            style="display: block; object-fit: cover; object-position: center; width: 100%; height: 400px;" loading="lazy"  />
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -543,7 +561,7 @@
                         items_titles: "Tomahawk Ribeye, Read Meats, Chicken Cuts, Bacon",
                         items_styles: "Premium, Regular, Organic, Thick",
                         items_page: "http://www.example.com, http://www.example.com, http://www.example.com, http://www.example.com",
-                        items_images: "./img/tomahawk1.jpg, ./img/ribeye.webp, ./img/chicken.webp, ./img/bacon.webp",
+                        items_images: "./img/tomahawk.jpg, ./img/ribeye.webp, ./img/chicken.webp, ./img/bacon.webp",
                         items_bbq: "./img/brisket.jpeg",
                         items_bbq_title: 'Brisket',
                         items_prices: '$49.99, 20% OFF, $9.99, $12.99',
